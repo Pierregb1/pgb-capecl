@@ -1,14 +1,20 @@
-import csv
+import pandas as pd
+#pip install openyxl
+def convcsvliste(fichier_excel):
+    
+    df = pd.read_excel(fichier_excel)
+    
+   
+    colonnes_dict = {colonne: df[colonne].tolist() for colonne in df.columns}
+    
+    return colonnes_dict
 
-def convscvliste(fichier_csv):
-    liste = []
-    with open(fichier_csv, mode='r', newline='', encoding='utf-8') as fichier:
-        lecteur_csv = csv.DictReader(fichier)
-        for ligne in lecteur_csv:
-            liste.append(ligne)
-    return liste
+fichier_excel = 'C:/Users/pierr/Downloads/valeur tp8 q1.xlsx'   #METTRE LES ESPACES POUR LE NOM DU FICHIER (SEULE LIGNE A MODIFIER)
+resultats = convcsvliste(fichier_excel)
 
-# Exemple d'utilisation :
-# fichier_csv = 'chemin/vers/votre/fichier.csv'
-# resultats = lire_csv_vers_liste(fichier_csv)
-# print(resultats)
+
+for colonne, valeurs in resultats.items():
+    print(f"Colonne '{colonne}': {valeurs}")
+
+
+
