@@ -11,8 +11,7 @@ objectifs du TP :
 """
 
 # en cas d'erreur mentionnant scipy lors de la première installation, installer scipy en copiant la commande suivante dans la console : pip install scipy
-
-import numpy as np
+import numpy as np 
 import matplotlib.pyplot as plt
 from scipy import special
 from scipy.optimize import curve_fit
@@ -39,11 +38,15 @@ verbose = False #permet d'afficher tous les tirages aléatoires sur le graphique
 
 
 
-x=[0,1,2,3]
-deltax=[0.001,0.02,0.03,0.01]# Delta x donnant l'intervalle de confiance à 95% pour 
+x= [0, 167, 232, 316, 464, 555, 651, 726, 785, 909]
 
-y=[0.0003,0.2,0.45,0.6]
-deltay = [0.0004, 0.02,0.05,0.02]
+
+deltax=[0,21, 15, 13, 9, 7, 8, 4, 6, 5]
+# Delta x donnant l'intervalle de confiance à 95% pour 
+
+y=[0, 15.4, 23, 32, 47.3, 56.5, 66.3, 73.8, 79.9, 92.5]
+deltay =[0, 0.1, 0.1, 0.1, 0.1, 0.1, 0.1, 0.1, 0.1, 0.1]
+
 
 
 modele = modele_affine #Pour changer le modèle d'ajustement, remplacer modele_affine par le nom de la fonction d'ajustement que vous souhaitez utiliser
